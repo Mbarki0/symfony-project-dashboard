@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Se connecter{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('build/app.css') }}">
+    <link rel="stylesheet" href="{{ asset('build/register.css') }}">
+{% endblock %}
+
+{% block body %}
+
+    {% include "includes/header.html.twig" %}
+
+    <section class="main-section">
+        <div class="center">
+            <form method="post">
+
+                {% if app.user %}
+                    <div class="mb-3">
+                        You are logged in as {{ app.user.userIdentifier }}, <a href="{{ path('app_logout') }}">Logout</a>
+                    </div>
+                {% endif %}
+
+                <h1>Se connecter</h1>
+                <div class="txt">
+                    <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="input" autocomplete="email" placeholder="Adresse e-mail" required>
+                </div>
+                <div class="txt">
+                    <input type="password" name="password" id="inputPassword" class="input" autocomplete="current-password" placeholder="Mot de passe" required>
+                </div>
+                <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+
+                {% if error %}
+                    <p class="alert alert-danger">Adresse email ou mot de passe invalid!</p>
+                {% endif %}
+
+                <button type="submit">Se connecter</button>
+                <div class="signup_link">
+                    Vous n'avez pas un compte ? <a href="/register">S'inscrire</a>
+                </div>
+            </form>
+        </div>
+    </section>
+
+{% endblock %}

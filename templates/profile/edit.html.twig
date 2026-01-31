@@ -1,0 +1,46 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Banque d'images{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('build/edit.css') }}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@48,400,0,0" />
+{% endblock %}
+
+{% block body %}
+
+    {% include "includes/header.html.twig" %}
+
+    <section class="main-section">
+
+        <h1 class="edit-title">Profile</h1>
+
+        <hr>
+
+        <div class="edit-container">
+            {{ form_start(editForm, {'attr': {'onsubmit': "return confirm('Voulez-vous modifier votre compte ?')"} }) }}
+                <div class="edit-form-row">
+                    <label for='nom'>Nom</label>
+                    {{ form_row(editForm.lastName) }}
+                </div>
+                <div class="edit-form-row">
+                    <label for='prenom'>Prénom</label>
+                    {{ form_row(editForm.firstName) }}
+                </div>
+                <div class="edit-form-row">
+                    <label for='email'>Email</label>
+                    {{ form_row(editForm.email) }}
+                </div>
+                <div class="edit-form-row">
+                    <label for='password'>Mot de passe</label>
+                    {{ form_row(editForm.password) }}
+                </div>
+                <button type="submit" class="btn">
+                    Enregister
+                </button>
+            {{ form_end(editForm) }}
+        </div>
+
+    </section>
+
+{% endblock %}

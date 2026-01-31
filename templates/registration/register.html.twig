@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}S'inscrire{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('build/app.css') }}">
+    <link rel="stylesheet" href="{{ asset('build/register.css') }}">
+{% endblock %}
+
+{% block body %}
+
+    {% include "includes/header.html.twig" %}
+
+    <section class="main-section">
+
+        <div class="center">
+            <h1>S'inscrire</h1>
+            {{ form_start(registrationForm) }}
+                <div class="txt">
+                    {{ form_row(registrationForm.lastName) }}
+                <div>
+                <div class="txt">
+                    {{ form_row(registrationForm.firstName) }}
+                <div>
+                <div class="txt">
+                    {{ form_row(registrationForm.email) }}
+                </div>
+                <div class="txt">
+                    {{ form_row(registrationForm.password.first) }}
+                </div>
+                <div class="txt">
+                    {{ form_row(registrationForm.password.second) }}
+                </div>
+                <button type="submit" class="btn">S'inscrire</button>
+                <div class="signup_link">
+                    Vous avez déjat un compte ? <a href="/login">Se connecter</a>
+                </div>
+            {{ form_end(registrationForm) }}
+        </div>
+
+    </section>
+
+{% endblock %}
