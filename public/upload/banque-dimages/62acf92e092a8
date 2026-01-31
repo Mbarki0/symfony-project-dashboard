@@ -1,0 +1,69 @@
+#include <iostream>
+using namespace std;
+
+/*class Rect {
+    int lar, lon;
+    public:
+        Rect(int x, int y):lar(x), lon(y) {}
+        int surface() {
+            return lar * lon;
+        }
+};
+
+int main() {
+    Rect R(3,4);
+    Rect *ptr1, *ptr2, *ptr3;
+    ptr1 = &R;
+    ptr2 = new Rect(3,7);
+    ptr3 = new Rect[3] {{2,5}, {3,6}, {5,8}};
+    cout << "Surface de R:" << R.surface() << endl;
+    cout << "Surface de *ptr1:" << ptr1->surface() << endl;
+    cout << "Surface de *ptr2:" << ptr2->surface() << endl;
+    cout << "Surface de *ptr3[1]:" << ptr3[1].surface() << endl;
+    delete ptr2;
+    delete[] ptr3;
+    return 0;
+}*/
+
+class P {
+    int l, h;
+    
+    public:
+        void set_val(int x, int y) {
+            l = x; h = y;
+        }
+        int surface() {
+            return 0;
+        }
+};
+
+class R: public P {
+
+    public:
+
+        int surface() {
+            return l * h;
+        }
+};
+
+class T: public P {
+
+    public:
+
+        int surface() {
+            return (l * h / 2);
+        }
+};
+
+int main() {
+    R r;
+    T t;
+    P p;
+    P *ptr[3] = {&r, &t, &p};
+    for(int i = 0; i < 3; i++) {
+        ptr[i]->set_val(4, 3);
+    }
+    for(int i = 0; i < 3; i++) {
+        cout << ptr[i]->surface() << endl;
+    }
+}
