@@ -1,0 +1,55 @@
+@import "requirements.css";
+
+.main-section {
+    padding: 0 5%;
+}
+
+.edit-container {
+    width: 100%;
+    display: flex;
+    margin-top: 2rem;
+}
+
+.edit-container form {
+    width: 50%;
+}
+
+.edit-container form .edit-form-row {
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.edit-container form .edit-form-row label {
+    font-weight: 500;
+    font-size: 18px;
+}
+
+.edit-container form .edit-form-row input {
+    font-size: 16px;
+    outline: none;
+    border: grey solid 1px;
+    width: 100%;
+    height: 40px;
+    border-radius: 5px;
+    padding-left: 10px;
+}
+
+.edit-container button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+    background-color: #2691d9;
+    border: none;
+    border-radius: 3px;
+    color: #fff;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.edit-title {
+    margin-top: 1.5rem;
+    font-weight: 500;
+    font-size: 1.3rem;
+    color: #1d262d;
+} 

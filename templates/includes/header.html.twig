@@ -1,0 +1,50 @@
+{% extends "base.html.twig" %}
+
+{% block title %}{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('build/header.css') }}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@48,400,0,0" />
+{% endblock %}
+
+{% block body %}
+
+    <header>
+            <h3 class='logo'>
+                <a href="/"><img src='{{ asset('images/logo_2.png') }}' height='30px'></a>
+            </h3>
+        <nav class="navigation">
+            <a href='/images'>
+                Banque d'images
+            </a>
+            <a href="/quizzes">
+                Quizzes
+            </a>
+            {% if is_granted('ROLE_ADMIN') %}
+                <a href="/admin">Tableau de board</a>
+            {% endif %}
+            {% if app.user %}
+                <div class="compte">
+                    <span class="material-symbols-sharp" style="color: #fff; cursor :pointer">account_circle</span>
+                    <ul class="compte-info">
+                        <li class="photo-mail">
+                            <div>
+                                <p style="text-overflow: ellipsis; overflow: hidden; white-space: nowrap;">
+                                    {{ app.user.email }}
+                                </p>
+                            </div>
+                        </li>
+                        <hr>
+                        <li class="icons">
+                            <div><span class="material-symbols-sharp">edit</span><span><a href="/profile/{{app.user.id}}">Mon compte</a></span></div>
+                            <div><span class="material-symbols-sharp">logout</span><span><a href="/logout">Déconnexion</a><span></div>
+                        </li>
+                    </ul>
+                </div>
+            {% else %}
+                <a href="/login" class="connexion">Connexion</a>
+            {% endif %}
+        </nav>
+    </header>
+
+{% endblock %}

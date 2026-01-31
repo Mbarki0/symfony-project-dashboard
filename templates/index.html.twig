@@ -1,0 +1,105 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Acceuil
+{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('build/acceuil.css') }}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@48,400,0,0"/>
+{% endblock %}
+
+{% block body %}
+
+    {{ include('includes/header.html.twig') }}
+
+    <div class="container-top">
+        <div class="div-text">
+            <h1>LABORATOIRE D'HÉMATHOLOGIE CHU OUJDA</h1>
+            <h2>Ce site web vous permet de trouvez des images sur différents types de cellules du sang, et améliorer vos connaissances<h2>
+        </div>
+    </div>
+
+    <div class="center">
+        <p class="title">Description</p>
+        <div class="sub-center">
+            <div class="card">
+                <p class="title-card">CHU Mohammed VI (Oujda)</p>
+                <div class="description">
+                    Le CHU Mohammed VI (Oujda) est un centre hospitalier universitaire situé dans la ville d'Oujda. Il est affilié au ministère de la Santé1,2. Ce centre se compose de quatre hôpitaux : l'hôpital des spécialités, l'hôpital mère-enfant, l'hôpital d'oncologie Hassan II et l'hôpital de la Santé Mentale et des Maladies Psychiatriques3.
+                </div>
+            </div>
+            <div class="card">
+                <p class="title-card">Capacité</p>
+                <div class="description">
+                    <ul>
+                        <li>Hôpital des spécialités (380 lits)</li>
+                        <li>Hôpital mère-enfant (140 lits)</li>
+                        <li>Hôpital d'oncologie Hassan II (45 lits)</li>
+                        <li>Hôpital de la Santé Mentale et des Maladies Psychiatriques (108 lits)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="services" data-aos="fade-left" data-aos-duration="1000" data-aos-once="true">
+        <p class="title">Nos services</p>
+        <div class="align">
+            <div class="aligne">
+                <p>Banque des images</p>
+                L'application contient une grande et utile banque d'images, simple et souple .
+            </div>
+            <div class="aligne">
+                <p>Disponibilité des quiz</p>
+                Cette application contient des quiz bien stricturées , et utiles ,avec la possibilité d'obtenir une moyenne  pour chaque quiz
+                <br>
+                une administration simple et facile , l'administrateur peut ajouter ou supprimer ou modifier les quiz simplement
+            </div>
+        </div>
+    </div>
+    <div class="photos">
+        <p class="title">Photos</p>
+        <div class="photo">
+            <button class="avant" onclick="avantImg()">
+                <img src="https://cdn-icons-png.flaticon.com/512/271/271220.png">
+            </button>
+            <div class="image">
+                <img class="imageIn" name="slide" width="600" height="300">
+            </div>
+            <button class="apres" onclick="changeImg()">
+                <img src="https://cdn-icons-png.flaticon.com/512/271/271228.png">
+            </button>
+        </div>
+    </div>
+    <script>
+        var i = 0;
+        var images = [];
+        images[0] = 'images/image1.png';
+        images[1] = 'images/image2.png';
+        images[2] = 'images/image3.jpg';
+        images[3] = 'https://static.lematin.ma/files/lematin/images/articles/2017/08/CHU-Mohammed-VI-dOujda1.jpg';
+        function changeImg() {
+            document.slide.src = images[i];
+            if (i < images.length - 1) {
+                i++;
+            } else {
+                i = 0;
+            }
+        }
+        function avantImg() {
+            document.slide.src = images[i];
+            if (i < images.length && i > 0) {
+                i--;
+            } else {
+                i = (images.length - 1);
+            }
+        }
+        window.onload = changeImg;
+        function more() {document.getElementsByTagName('li').style.display = "flex";}
+    </script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>AOS.init({duration: 3000, once: true});</script>
+
+    {{ include('includes/footer.html.twig') }}
+
+{% endblock %}

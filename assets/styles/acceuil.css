@@ -1,0 +1,372 @@
+@import "requirements.css";
+
+.container-top {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 0 5%;
+    height: 70vh;
+    background-color: rgba(65, 65, 65, 0.432);
+    background-image: linear-gradient(rgb(0, 0, 0, 0.4), rgb(0, 0, 0, 0.6)), url(../../public/images/bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.div-text h1 {
+    color: #5fbfff;
+    font-size: 40px;
+    font-weight: 700;
+    font-family: titillium web,sans-serif;
+}
+
+.div-text h2 {
+    color: #f1f1f1;
+    font-size: 1.2em;
+    font-weight: 400;
+    margin: 10px 0;
+}
+
+/**/
+
+body {
+    background-color: rgb(250, 250, 255);
+}
+
+.services {
+    padding: 20px 5%;
+    width: 100%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    transition: ease-in 0.7;
+    transition: ease-in 0.7s;
+}
+
+.services .align p {
+    color: rgb(244, 242, 242);
+    font-size: 20PX;
+    font-weight: 600;
+    display: flex;
+    align-self: center;
+}
+
+.title {
+    font-weight: 600;
+    font-size: 1.8em;
+    display: inline-block;
+    border-radius: 4px;
+    color: #555;
+    text-shadow: 0px 1px 10px rgb(255 255 255 / 70%);
+    margin: 2rem auto;
+    width: 100%;
+    text-align: center;
+}
+
+.services .align {
+    display: flex;
+    flex-direction: row;
+    float: left;
+    justify-content: space-around;
+    background-image: linear-gradient(to bottom, rgb(65, 72, 101), rgb(38, 43, 62));
+    box-shadow: rgba(100, 100, 111, 0.445) 0px 7px 29px 0px;
+    padding: 30px 0;
+    border-radius: 8px;
+}
+
+.services .align .aligne {
+    font-size: 14PX;
+    color: rgb(228, 221, 221);
+    font-weight: 350;
+    max-width: 300PX;
+}
+
+.center {
+    padding: 0 5%;
+    width: 100%;
+}
+
+.sub-center {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.card {
+    width: 600PX;
+    padding: 15PX;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5PX;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    border-radius: 8px;
+}
+
+.card:not(:last-child) {
+    margin-right: 50px;
+}
+
+#login {
+    padding: 10PX 30PX;
+    background-color: var(--bg);
+    border-radius: 20PX;
+    align-self: flex-end;
+    position: absolute;
+    right: 50PX;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+#login:hover {
+    transform: scale(1.1);
+}
+
+#login a {
+    color: white;
+}
+
+#logo {
+    position: absolute;
+    justify-content: flex-start;
+    margin: 0 0 0 20PX;
+    left: 0%;
+    align-self: center;
+    transition: ease 3s;
+    max-height: 60PX;
+}
+
+.mapouter {
+    padding: 0 20PX 20PX 20PX;
+    margin-right: 50PX;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.background {
+    width: 100%;
+    background-size: contain;
+    background-clip: border-box;
+    max-height: 500;
+    background-color: black;
+
+}
+
+.background ::after {
+    background-color: black;
+}
+
+.colonne {
+    display: flex;
+    flex-direction: column;
+    margin-top: 15PX;
+    margin-left: 60PX;
+}
+
+.colonne p a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.colonne img {
+    height: 100PX;
+    margin-left: 100PX;
+}
+
+.local {
+    display: block;
+    position: relative;
+}
+
+.ligne {
+    height: 100%;
+    width: 2PX;
+    position: absolute;
+    left: 10%;
+    background-color: rgb(9, 9, 9);
+    z-index: 1;
+}
+
+.title-card {
+    color: #000;
+    font-size: 1.2rem;
+    font-weight: 600;
+    display: block;
+    text-align: center;
+}
+
+.doctor {
+    height: 370PX;
+    width: auto;
+    position: absolute;
+    display: block;
+    z-index: 2;
+    left: 40%;
+    transition-timing-function: ease;
+    transition-duration: 1s;
+    animation-delay: 2s
+}
+
+.doctor:hover {
+    left: 42%;
+    transition-timing-function: ease;
+    transition-duration: 1s;
+    animation-delay: 2s;
+}
+
+.Service {
+    transform: rotate(-5deg);
+    font-size: 40PX;
+    margin-top: 70PX;
+    margin-left: 55%;
+    z-index: 1;
+    position: absolute;
+    font-weight: 500;
+}
+
+.down {
+    padding: 2% 0 0 5%;
+    position: absolute;
+    display: block;
+    width: 85%;
+    height: 180PX;
+    bottom: 0;
+    right: 0%;
+    background-image: linear-gradient(to bottom RIGHT, rgb(230, 225, 225), rgba(42, 41, 41, 0.548));
+    font-size: 12PX;
+}
+
+.local {
+    width: 10%;
+    bottom: 0;
+    position: absolute;
+    margin: 0 5PX 15PX 5PX;
+    font-size: 12PX;
+    color: #5d5656;
+}
+
+#accueil {
+    margin-right: 30px;
+    font-weight: 650;
+    color: var(--bg);
+    border-bottom: var(--bg) solid 3px;
+    padding-bottom: 10PX;
+
+}
+
+.description {
+    list-style: none;
+    font-size: 13px;
+    margin-left: 20PX;
+    padding: 20px;
+    border-radius: 5PX;
+}
+
+.description ul li {
+    padding: 0%;
+}
+
+ul li {
+    list-style: none;
+    color: rgb(30, 30, 30);
+    font-size: 12px;
+    padding: 10px;
+}
+
+.photo {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    margin-bottom: 50px;
+}
+
+.photo img {
+    display: flex;
+    border-radius: 8px;
+}
+
+.photos {
+    width: 100%;
+    padding: 0 5%;
+}
+
+.desc {
+    padding: 20px;
+}
+
+.avant,
+.avant img,
+.apres,
+.apres img {
+    display: flex;
+    height: 15px;
+    width: 15px;
+    background-color: transparent;
+    border: none;
+    align-self: center;
+    flex-direction: column;
+    margin: auto;
+    cursor: pointer;
+}
+
+.apres:hover,
+.avant:hover {
+    transform: scale(1.5);
+}
+
+.image {
+    display: flex;
+    float: left;
+    flex-direction: column;
+}
+
+.middle {
+    display: flex;
+}
+
+.contact {
+    width: 70%;
+    padding: 30PX 20PX;
+    background-image: linear-gradient(to right bottom, rgb(108, 148, 224), rgb(67, 111, 193), var(--bg), rgb(62, 106, 188));
+    display: flex;
+    margin: auto;
+    justify-content: center;
+    flex-direction: row;
+    z-index: 9;
+
+    box-shadow: rgba(100, 100, 111, 0.445) 0px 7px 29px 0px;
+
+}
+
+#more {
+    display: none;
+}
+
+@media only screen and (max-width: 740px) {
+    #doctor {
+        height: 300px;
+        flex-direction: row;
+        display: none;
+    }
+
+    .image img {
+        width: 80%;
+        align-self: center;
+    }
+
+    .apres {
+        margin: 0%;
+        align-items: flex-start;
+    }
+
+    #more {
+        display: block;
+        font-size: 30PX;
+        margin: auto;
+    }
+
+    #more:active {
+        display: none;
+    }
+}

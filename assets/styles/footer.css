@@ -1,0 +1,37 @@
+@import "requirements.css";
+
+
+.footer {
+    background-color: var(--heder-bg-color);
+    color: #fff;
+    padding: 5px 5%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    bottom: 0;
+}
+
+.footer-title {
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.footer .social-icons {
+    display: flex;
+    align-items: center;
+}
+
+.footer .social-icons a {
+    font-size: 1.3em;
+    margin-left: 30px;
+}
+
+.footer .social-icons a i {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.footer .social-icons a i:hover {
+    color: #fff;
+}

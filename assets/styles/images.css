@@ -1,0 +1,250 @@
+@import "requirements.css";
+
+
+/* start search bar */
+
+.container-top {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 20px 5%;
+    background-color: rgba(65, 65, 65, 0.432);
+    background-image: linear-gradient(rgb(0, 0, 0, 0.2), rgba(100, 100, 100, 0.1)), url('https://p4.wallpaperbetter.com/wallpaper/190/337/145/gray-minimalistic-textures-wallpaper-preview.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.search-container {
+    width: 100%;
+}
+
+.search-container div {
+    width: 100%;
+}
+
+.search-container .div-form {
+    display: flex;
+    align-items: center;
+}
+
+.search-container .div-text h1 {
+    color: #5fbfff;
+    font-size: 40px;
+    font-weight: 700;
+    font-family: titillium web,sans-serif;
+}
+
+.search-container .div-text h2 {
+    color: #f1f1f1;
+    font-size: 1.2em;
+    font-weight: 400;
+    margin: 10px 0;
+}
+
+.div-form form {
+    display: flex;
+    height: 50px;
+    align-items: center;
+    justify-content: center;
+    background-color: #f1f1f1;
+    border-radius: 2px;
+    width: 100%;
+}
+
+.div-form form input {
+    border: none;
+    outline: none;
+    font-size: 18px;
+    height: 100%;
+    width: 100%;
+    padding-left: 20px;
+    border-radius: 2px;
+    background-color: #f1f1f1;
+}
+
+.div-form form button {
+    border: none;
+    outline: none;
+    padding: 5px 10px;
+    height: 100%;
+    background-color: #f1f1f1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 2px;
+}
+
+/* ends search bar */
+
+/************************************/
+
+/* start main section */
+
+.main-section {
+    width: 100%;
+    padding: 0 5%;
+    min-height: 60vh;
+}
+
+.title {
+    color: rgb(116, 116, 116);
+    margin-top: 1.5rem;
+    font-weight: 500;
+    font-size: 1.3rem;
+}
+
+hr {
+    border-color: #f0f0f0;
+    margin: 1rem 0;
+}
+
+.total {
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: rgb(134, 134, 134);
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.card {
+    width: 150px;
+    background-color: #fff;
+    margin: 50px 20px 0 20px;
+    transition: 0.3s ease;
+    border-radius: 10px;
+    box-shadow: 0 5px 25px rgba(1 1 1 / 10%);
+    border: solid 1px rgb(190, 190, 190);
+}
+
+.card h3 {
+    font-size: 1rem;
+    font-weight: 400;
+    text-align: center;
+}
+
+.card img {
+    width: 100%;
+    height: 100px;
+    cursor: zoom-in;
+}
+
+.card:hover {
+    transform: scale(1.02);
+}
+
+/* end main section */
+
+/************************************/
+
+/* start modal zoom images */
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    /*overflow: auto;  Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 70%;
+    max-width: 700px;
+}
+
+#caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    height: 150px;
+}
+
+.modal-content, #caption {
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+
+@keyframes zoom {
+    from {transform:scale(0)}
+    to {transform:scale(1)}
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close:hover, .close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 700px){
+    .modal-content {
+    width: 100%;
+    }
+}
+
+/* end modal zoom images */
+
+/************************************/
+
+/* start pagination */
+
+.pagination {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 1.5rem 0;
+}
+
+.pagination span {
+    padding: 5px;
+    width: 30px;
+    height: 30px;
+    background-color: rgb(116, 116, 116);
+    margin: 0 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    color: white;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.pagination .current {
+    background-color: white;
+    color: rgb(116, 116, 116);
+    border: 1px solid rgb(116, 116, 116);
+}
+
+.pagination span a {
+    color: white;
+}
+
+/* end pagination */
