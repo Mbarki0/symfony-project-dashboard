@@ -1,0 +1,7 @@
+<div style="display: flex;">
+    {% for image in field.value %}
+        <div href="#" style="margin: 10px;align-items: center; justify-content: center; flex-direction: row; flex-wrap: wrap;">
+            <img src="{{ asset('upload/banque-dimages/' ~ image.path) }}" class="img-fluid" width="200px" height="200px">
+        </div>  
+    {% endfor %}
+</div>

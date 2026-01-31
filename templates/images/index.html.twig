@@ -1,0 +1,60 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Banque d'images{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('build/images.css') }}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@48,400,0,0" />
+{% endblock %}
+
+{% block body %}
+
+    {% include "includes/header.html.twig" %}
+
+    <div class="container-top">
+        <div class="search-container">
+            <div class="div-form">
+                {{ form_start(searchForm) }}
+                    {{ form_row(searchForm.title) }}
+                    <button type="submit" class="btn btn_common">
+                        <span class="material-symbols-sharp">search</span>
+                    </button>
+                {{ form_end(searchForm) }}
+            </div>
+        </div>
+    </div>
+
+    <section class="main-section">
+        <h1 class="title">Résultat de {{images|length}} images</h1>
+
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+
+            <!-- The Close Button -->
+            <span class="close">&times;</span>
+            <!-- Modal Content (The Image) -->
+            <img class="modal-content" id="img01">
+            <!-- Modal Caption (Image Text) -->
+            <div id="caption"></div>
+
+        </div>
+
+        <!-- Compléter la section avec les images de la banque d'images -->
+        <div class="container">
+            {% for image in images %}
+                <div class="card">
+                    <img src="{{ asset('upload/banque-dimages/' ~ image.path) }}" class="zoomD">
+                    <h3>{{ image.title }}</h3>
+                </div>
+            {% endfor %}
+        </div>
+
+    </section>
+
+    <div class="pagination">
+        {{ knp_pagination_render(images) }}
+    </div>
+
+    {% include "includes/footer.html.twig" %}
+
+{% endblock %}

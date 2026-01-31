@@ -1,0 +1,35 @@
+{% extends "base.html.twig" %}
+
+{% block title %}{{ image.title }}{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('build/image.css') }}">
+{% endblock %}
+
+{% block body %}
+
+    {% include "includes/header.html.twig" %}
+
+    <section class="section">
+
+        <div class="container-image">
+            <h1 class="image-title">{{ image.title }}</h1>
+
+            <div class="image-image">
+                <img src="{{ asset('upload/banque-dimages/' ~ image.path) }}">
+            </div>
+
+            <div class="image-description">
+                <h2>Description :</h2>
+                <p class="grey">
+                    {{ image.description }}
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+    {% include "includes/footer.html.twig" %}
+
+{% endblock %}
