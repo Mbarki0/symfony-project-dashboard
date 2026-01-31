@@ -1,0 +1,57 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Quizzes{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('build/quizzes.css') }}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@48,400,0,0" />
+{% endblock %}
+
+{% block body %}
+
+    {% include "includes/header.html.twig" %}
+
+    <section class="main-section">
+
+        <div class="levels">
+
+            {% for level in levels %}
+                <h1 class="level-title">
+                    {{ level.title }} :
+                <h1>
+
+                <div class="quizzes">
+                    {% for quiz in quizzes %}
+                        {% if quiz.level == level %}
+                            <div class="quiz">
+                                <div>
+                                    <a href="/quizzes/{{ quiz.id }}">{{ quiz.title }}</a>
+                                </div>
+                                {% set test = false %}
+                                {% for result in results %}
+                                    {% if result.quiz == quiz %}
+                                        <p class="result">
+                                            Résultat : {{ result.result }}%
+                                        </p>
+                                        {% set test = true %}
+                                    {% endif %}
+                                {% endfor %}
+                                {% if not test %}
+                                    <p class="result">
+                                        Résultat : 0%
+                                    </p>
+                                {% endif %}
+                                
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            {% endfor %}
+            
+        </div>
+
+    </section>
+
+    {% include "includes/footer.html.twig" %}
+
+{% endblock %}

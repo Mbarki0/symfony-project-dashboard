@@ -1,0 +1,52 @@
+{% extends "base.html.twig" %}
+
+{% block title %}{{ quiz.title }}{% endblock %}
+
+{% block stylesheets %}
+	<link rel="stylesheet" href="{{ asset('build/show-quiz.css') }}">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@48,400,0,0"/>
+{% endblock %}
+
+{% block body %}
+
+	{% include "includes/header.html.twig" %}
+
+	<section class='show-quiz-section'>
+		
+        {% set q = 1 %}
+
+        <form action="/evaluate/{{ quiz.id }}" method='post'>
+
+        <div class="container-questions">
+
+            <h1 class="quiz-title"><span class="fa fa-check-square" style="margin-right: 10px;"></span>{{ quiz.title }}</h1>
+
+            {% for question in questions %}
+                <h2 class="question-nbr">QUESTION {{ q }} :</h2>
+                <hr>
+                <h3 class="question-text">{{ question.text }}</h3>
+                <div class="container-options">
+                    {% set onbr = 1 %}
+                    {% for option in question.options %}
+                        <div class="option">
+                            <input type="checkbox" name="{{ question.id }}-{{ onbr }}" value="{{ option }}">
+                            <span class="option-text">{{ option }}</span>
+                        </div>
+                        {% set onbr = onbr + 1 %}
+                    {% endfor %}
+                </div>
+                {% set q = q + 1 %}
+            {% endfor %}
+        </div>
+        <button type="submit" class="quiz-btn" name="submit">
+            Envoyer et obtenu votre note
+        </button>
+
+        </form>
+
+	</section>
+
+	{% include "includes/footer.html.twig" %}
+
+{% endblock %}
+
